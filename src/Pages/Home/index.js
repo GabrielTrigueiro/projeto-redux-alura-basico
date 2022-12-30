@@ -11,6 +11,7 @@ import eletronicosHeader from 'assets/categorias/header/eletronicos.png';
 import escritorioHeader from 'assets/categorias/header/escritorio.png';
 import jogosHeader from 'assets/categorias/header/jogos.png';
 import somHeader from 'assets/categorias/header/som.png';
+import { useNavigate } from "react-router-dom";
 
 const categorias = [{
     nome: 'Eletrônicos',
@@ -45,6 +46,9 @@ const categorias = [{
   }]
 
 export default function Home() {
+
+    const navigate = useNavigate();
+
     return(
         <div>
             <Header
@@ -61,7 +65,7 @@ export default function Home() {
                 </div>
                 <div className={styles['categorias-container']}>
                     {categorias.map((categoria, index) => (
-                        <div key={index}>
+                        <div key={index} onClick={() => navigate(`/categoria/${categoria.id}`)}>
                             <img src={categoria.thumbnail} alt={categoria.nome}/>
                             <h1>{categoria.nome}</h1>
                         </div>
