@@ -1,12 +1,12 @@
-import styles from "./Busca.module.scss";
+import styles from './Busca.module.scss';
 
 export default function Busca() {
-    return(
-        <div className={styles.busca}>
-            <input
-                className={styles.inpu}t
-                placeholder="O que você procura?"
-            />
-        </div>
-    )
+  return (
+    <div className={styles.busca}>
+      <input
+        className={styles.input}
+        placeholder="O que você procura?"
+      />
+    </div>
+  )
 }
